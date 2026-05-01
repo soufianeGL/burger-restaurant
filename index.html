@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BURGR. — The Ultimate Burger Experience</title>
+  <meta name="description" content="Hand-pressed wagyu patties. Brioche buns. Bold flavors. Crafted for those who don't settle." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍔</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<!-- CURSOR -->
+<div class="cursor" id="cursor"></div>
+<div class="cursor-follower" id="cursor-follower"></div>
+
+<!-- LOADER -->
+<div class="loader" id="loader">
+  <div class="loader-content">
+    <div class="loader-burger">
+      <div class="lb-bun-top"></div>
+      <div class="lb-patty"></div>
+      <div class="lb-patty"></div>
+      <div class="lb-bun-bottom"></div>
+    </div>
+    <div class="loader-text">BURGR<span>.</span></div>
+    <div class="loader-progress"><div class="loader-progress-bar" id="progressBar"></div></div>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="#" class="logo">
+      <div class="logo-icon">🍔</div>
+      <span>BURGR<em>.</em></span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#menu" class="nav-link">Menu</a></li>
+      <li><a href="#story" class="nav-link">Story</a></li>
+      <li><a href="#specials" class="nav-link">Specials</a></li>
+      <li><a href="#contact" class="nav-link">Contact</a></li>
+    </ul>
+    <a href="#contact" class="btn btn-nav">Reserve Table</a>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#menu" class="mobile-link">Menu</a>
+    <a href="#story" class="mobile-link">Story</a>
+    <a href="#specials" class="mobile-link">Specials</a>
+    <a href="#contact" class="mobile-link">Contact</a>
+    <a href="#contact" class="btn btn-primary mt-2">Reserve Table</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-bg-glow"></div>
+  <div class="hero-grid-lines"></div>
+  <div class="hero-inner">
+    <div class="hero-content" data-aos="fade-right">
+      <div class="badge-pill reveal">
+        <span class="badge-dot"></span>
+        Crafted to Perfection
+      </div>
+      <h1 class="hero-title">
+        <span class="line" data-text="THE">THE</span>
+        <span class="line orange" data-text="ULTIMATE">ULTIMATE</span>
+        <span class="line" data-text="BURGER">BURGER</span>
+      </h1>
+      <p class="hero-sub reveal-delay">Hand-pressed wagyu patties. Brioche buns.<br/>Bold flavors. Built for those who don't settle.</p>
+      <div class="hero-btns reveal-delay-2">
+        <a href="#menu" class="btn btn-primary">
+          <span>Explore Menu</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="#story" class="btn btn-ghost">
+          <span class="play-icon">▶</span>
+          Watch Our Story
+        </a>
+      </div>
+      <div class="hero-stats reveal-delay-3">
+        <div class="stat-item">
+          <span class="stat-val" data-count="4.9">0</span><span class="stat-unit">★</span>
+          <span class="stat-label">Rating</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-val" data-count="12">0</span><span class="stat-unit">K+</span>
+          <span class="stat-label">Happy Guests</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-val" data-count="48">0</span>
+          <span class="stat-label">Menu Items</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-val" data-count="8">0</span>
+          <span class="stat-label">Awards Won</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="burger-scene">
+        <div class="burger-glow"></div>
+        <div class="burger-plate"></div>
+        <div class="burger-stack" id="burgerStack">
+          <div class="bun-bottom"></div>
+          <div class="layer lettuce"><span></span></div>
+          <div class="layer tomato"></div>
+          <div class="layer cheese"></div>
+          <div class="layer patty"><div class="patty-texture"></div></div>
+          <div class="layer bacon"></div>
+          <div class="layer patty"><div class="patty-texture"></div></div>
+          <div class="layer sauce"><span class="sauce-drip"></span><span class="sauce-drip"></span><span class="sauce-drip"></span></div>
+          <div class="bun-top">
+            <div class="sesame"></div><div class="sesame"></div><div class="sesame"></div>
+            <div class="sesame"></div><div class="sesame"></div>
+          </div>
+        </div>
+        <div class="burger-badge">
+          <span class="badge-num">#1</span>
+          <span class="badge-lbl">in the city</span>
+        </div>
+        <div class="floating-tags">
+          <div class="ftag" style="--delay:0s">🥩 Wagyu Beef</div>
+          <div class="ftag" style="--delay:0.3s">🧀 Aged Cheddar</div>
+          <div class="ftag" style="--delay:0.6s">🥬 Fresh Lettuce</div>
+          <div class="ftag" style="--delay:0.9s">🔥 Secret Sauce</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-indicator">
+    <div class="scroll-mouse"><div class="scroll-wheel"></div></div>
+    <span>Scroll to explore</span>
+  </div>
+</section>
+
+<!-- MARQUEE STRIP -->
+<div class="marquee-strip">
+  <div class="marquee-track">
+    <span>🍔 WAGYU BURGERS</span><span>•</span>
+    <span>🔥 HOUSE SAUCES</span><span>•</span>
+    <span>🍟 CRISPY FRIES</span><span>•</span>
+    <span>🥤 CRAFT SHAKES</span><span>•</span>
+    <span>🏆 AWARD WINNING</span><span>•</span>
+    <span>🌿 FRESH DAILY</span><span>•</span>
+    <span>🍔 WAGYU BURGERS</span><span>•</span>
+    <span>🔥 HOUSE SAUCES</span><span>•</span>
+    <span>🍟 CRISPY FRIES</span><span>•</span>
+    <span>🥤 CRAFT SHAKES</span><span>•</span>
+    <span>🏆 AWARD WINNING</span><span>•</span>
+    <span>🌿 FRESH DAILY</span><span>•</span>
+  </div>
+</div>
+
+<!-- MENU -->
+<section class="section menu-section" id="menu">
+  <div class="section-bg-pattern"></div>
+  <div class="container">
+    <div class="section-header" data-aos="fade-up">
+      <div class="section-tag">⚡ Our Signature Menu</div>
+      <h2>Pick Your <span class="orange">Poison</span></h2>
+      <p>Every burger tells a story. Find yours.</p>
+    </div>
+    <div class="menu-tabs" data-aos="fade-up" data-aos-delay="100">
+      <button class="tab active" data-tab="all">All</button>
+      <button class="tab" data-tab="classics">Classics</button>
+      <button class="tab" data-tab="specials">Specials</button>
+      <button class="tab" data-tab="veggie">Veggie</button>
+      <button class="tab" data-tab="combos">Combos</button>
+    </div>
+    <div class="menu-grid" id="menuGrid">
+      <!-- Cards injected by JS -->
+    </div>
+  </div>
+</section>
+
+<!-- STORY / ABOUT -->
+<section class="section story-section" id="story">
+  <div class="container">
+    <div class="story-grid">
+      <div class="story-content" data-aos="fade-right">
+        <div class="section-tag">🏆 Est. 2019</div>
+        <h2>More Than<br/><span class="orange">Just a Burger</span></h2>
+        <p>We started BURGR. with one belief: a great burger changes your whole day. Every patty is hand-pressed, every sauce is made in-house, and every bun is baked fresh each morning.</p>
+        <p>From humble beginnings in a 200-sq-ft kitchen, we've grown to become the city's most-loved burger joint — because we've never cut corners.</p>
+        <div class="story-features">
+          <div class="feature-item">
+            <div class="feature-icon">🌿</div>
+            <div>
+              <strong>All-Natural Ingredients</strong>
+              <p>No preservatives. No shortcuts. Ever.</p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon">🔥</div>
+            <div>
+              <strong>House-Made Sauces</strong>
+              <p>12 signature blends crafted from scratch daily.</p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon">🍞</div>
+            <div>
+              <strong>Fresh-Baked Buns</strong>
+              <p>Brioche perfection, baked every morning at 6AM.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="story-visual" data-aos="fade-left">
+        <div class="story-img-grid">
+          <div class="simg simg-1"><span>🍳</span><p>Our Kitchen</p></div>
+          <div class="simg simg-2"><span>🍞</span><p>Fresh Buns</p></div>
+          <div class="simg simg-3"><span>🥩</span><p>The Patty Craft</p></div>
+          <div class="simg simg-4"><span>✨</span><p>The Full Experience</p></div>
+        </div>
+        <div class="story-badge">
+          <div class="story-badge-inner">
+            <span class="story-badge-num">5★</span>
+            <span>Yelp Rated</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SPECIALS -->
+<section class="section specials-section" id="specials">
+  <div class="container">
+    <div class="section-header" data-aos="fade-up">
+      <div class="section-tag">🌟 This Week's Specials</div>
+      <h2>Limited Time <span class="orange">Drops</span></h2>
+      <p>Only here for a limited time. Don't sleep on it.</p>
+    </div>
+    <div class="specials-grid" data-aos="fade-up" data-aos-delay="100">
+      <div class="special-card special-featured">
+        <div class="special-emoji">🍔</div>
+        <div class="special-label">FEATURED DROP</div>
+        <h3>The Smokemaster</h3>
+        <p>Triple-smoked brisket patty, chipotle aioli, crispy onion rings, smoked gouda, jalapeño slaw</p>
+        <div class="special-footer">
+          <span class="special-price">$26</span>
+          <span class="special-countdown" id="countdown">Available for: <strong>2d 14h 32m</strong></span>
+        </div>
+        <a href="#contact" class="btn btn-primary">Order Now</a>
+      </div>
+      <div class="special-side">
+        <div class="special-card">
+          <div class="special-emoji">🌶️</div>
+          <div class="special-label">SPICY COLLAB</div>
+          <h3>The Dragon Fire</h3>
+          <p>Carolina reaper sauce, ghost pepper cheese, triple jalapeños, dare if you dare</p>
+          <div class="special-footer">
+            <span class="special-price">$22</span>
+            <a href="#contact" class="btn btn-ghost-sm">Order</a>
+          </div>
+        </div>
+        <div class="special-card">
+          <div class="special-emoji">🫧</div>
+          <div class="special-label">NEW ARRIVAL</div>
+          <h3>The Cloud Burger</h3>
+          <p>Whipped feta, cloud bread bun, poached egg, hollandaise, truffle oil</p>
+          <div class="special-footer">
+            <span class="special-price">$28</span>
+            <a href="#contact" class="btn btn-ghost-sm">Order</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section testi-section">
+  <div class="container">
+    <div class="section-header" data-aos="fade-up">
+      <div class="section-tag">💬 Real People, Real Love</div>
+      <h2>What Our Guests <span class="orange">Are Saying</span></h2>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card" data-aos="fade-up" data-aos-delay="0">
+        <div class="testi-stars">★★★★★</div>
+        <p>"The Black Label is life-changing. I drove 45 minutes just for this burger. Worth every second."</p>
+        <div class="testi-author">
+          <div class="testi-avatar">J</div>
+          <div><strong>Jordan M.</strong><span>Food Blogger</span></div>
+        </div>
+      </div>
+      <div class="testi-card featured-review" data-aos="fade-up" data-aos-delay="100">
+        <div class="testi-stars">★★★★★</div>
+        <p>"Best burger in the city, hands down. The Inferno had me crying happy tears. Absolutely incredible sauce game."</p>
+        <div class="testi-author">
+          <div class="testi-avatar">P</div>
+          <div><strong>Priya S.</strong><span>Verified Guest</span></div>
+        </div>
+      </div>
+      <div class="testi-card" data-aos="fade-up" data-aos-delay="200">
+        <div class="testi-stars">★★★★★</div>
+        <p>"I've eaten at Michelin-starred restaurants. BURGR. beats half of them on pure satisfaction alone."</p>
+        <div class="testi-author">
+          <div class="testi-avatar">A</div>
+          <div><strong>Alex K.</strong><span>Culinary Critic</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT / CTA -->
+<section class="section contact-section" id="contact">
+  <div class="container">
+    <div class="cta-block" data-aos="zoom-in">
+      <div class="cta-glow"></div>
+      <div class="cta-content">
+        <div class="section-tag" style="color:#fff;border-color:rgba(255,255,255,0.3)">🍔 Let's Get You Fed</div>
+        <h2>Ready to Take<br/>a <span style="text-decoration:underline;text-decoration-color:rgba(255,255,255,0.4)">Bite?</span></h2>
+        <p>Book your table or order online — your dream burger is just a few clicks away.</p>
+        <div class="cta-btns">
+          <a href="tel:+15558675309" class="btn btn-white">Reserve Now</a>
+          <a href="#menu" class="btn btn-ghost-white">Order Online</a>
+        </div>
+      </div>
+      <div class="contact-info">
+        <div class="contact-item">
+          <span class="contact-icon">📍</span>
+          <div>
+            <strong>Find Us</strong>
+            <p>123 Grill Street, Food District</p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <span class="contact-icon">📞</span>
+          <div>
+            <strong>Call Us</strong>
+            <p>+1 (555) 867-5309</p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <span class="contact-icon">🕐</span>
+          <div>
+            <strong>Hours</strong>
+            <p>Mon–Sun 11AM – 11PM</p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <span class="contact-icon">📸</span>
+          <div>
+            <strong>Follow Us</strong>
+            <p>@burgr.official</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="logo"><div class="logo-icon">🍔</div><span>BURGR<em>.</em></span></div>
+        <p>Crafted for those who dare.</p>
+        <div class="footer-social">
+          <a href="#" class="social-link">📸</a>
+          <a href="#" class="social-link">🐦</a>
+          <a href="#" class="social-link">👥</a>
+          <a href="#" class="social-link">🎵</a>
+        </div>
+      </div>
+      <div class="footer-links-group">
+        <h4>Menu</h4>
+        <a href="#">Classics</a>
+        <a href="#">Specials</a>
+        <a href="#">Veggie</a>
+        <a href="#">Combos</a>
+        <a href="#">Drinks</a>
+      </div>
+      <div class="footer-links-group">
+        <h4>Company</h4>
+        <a href="#">Our Story</a>
+        <a href="#">Careers</a>
+        <a href="#">Press</a>
+        <a href="#">Blog</a>
+      </div>
+      <div class="footer-links-group">
+        <h4>Contact</h4>
+        <a href="#">123 Grill Street</a>
+        <a href="tel:+15558675309">+1 (555) 867-5309</a>
+        <a href="mailto:hello@burgr.com">hello@burgr.com</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 BURGR. All rights reserved.</p>
+      <div class="footer-legal">
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+        <a href="#">Cookies</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
